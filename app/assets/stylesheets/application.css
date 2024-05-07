@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+.navbar-custom{
+    background-color: rgb(139, 2, 43);
+}
+
+h1{
+    color:rgb(139, 2, 43); 
+    font-size: 2em; 
+}
+
+.nav-link-custom, .navbar-title-custom{
+    color: white; 
+}
