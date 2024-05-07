@@ -1,0 +1,37 @@
+<%= form_with(model: equipe) do |form| %>
+  <% if equipe.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(equipe.errors.count, "error") %> prohibited this equipe from being saved:</h2>
+
+      <ul>
+        <% equipe.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :nom_equipe, style: "display: block" %>
+    <%= form.text_field :nom_equipe, class:"form-control", placeholder:"Nom de l'équipe" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :nom_capitaine, style: "display: block" %>
+    <%= form.text_field :nom_capitaine, class:"form-control", placeholder:"Nom du/de la capitaine"%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :telephone, style: "display: block" %>
+    <%= form.text_field :telephone, class:"form-control", placeholder:"Numéro de téléphone" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email, class:"form-control", placeholder:"Email de contact"%>
+  </div>
+<br>
+  <div>
+    <%= form.submit "Valider", class:"btn btn-outline-success" %>
+  </div>
+<% end %>

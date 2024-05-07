@@ -1,0 +1,30 @@
+<h1>Equipes</h1>
+<br>
+<table class="table table-bordered table-hover table-striped">
+  <thead class="table-primary">
+    <tr>
+      <th scope="col">Nom équipe</th>
+      <th scope="col">Nom capitaine</th>
+      <th scope="col">Téléphone</th>
+      <th scope="col">Email</th>
+      <th colspan="2">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @equipes.each do |equipe| %>
+      <tr>
+        <th><%= equipe.nom_equipe %></th>
+        <th><%= equipe.nom_capitaine %></th>
+        <th><%= equipe.telephone %></th>
+        <th><%= equipe.email %></th>
+        <th><%= link_to "Editer", edit_equipe_path(equipe), class:"btn btn-outline-primary btn-sm" %></th>
+        <th><%= button_to "Supprimer", equipe, method: :delete, class:"btn btn-outline-danger btn-sm" %></th>
+      </tr>
+    <% end %> 
+  </tbody>
+</table>
+<br>
+<%= link_to "Ajouter une équipe", new_equipe_path, class:"btn btn-secondary" %>
+
+
+
