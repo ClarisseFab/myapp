@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  equipe_1: MyString
+  equipe_2: MyString
+  equipe_3: MyString
+  equipe_4: MyString
+
+two:
+  equipe_1: MyString
+  equipe_2: MyString
+  equipe_3: MyString
+  equipe_4: MyString

@@ -11,7 +11,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @equipes.each do |equipe| %>
+    <% @equipes.order("id").each do |equipe| %>
       <tr>
         <th><%= equipe.nom_equipe %></th>
         <th><%= equipe.nom_capitaine %></th>
@@ -25,7 +25,7 @@
 </table>
 <br>
 <%= link_to "Ajouter une équipe", new_equipe_path, class:"btn btn-secondary" %>
-<%= link_to "Créer les poules", poules_path, class:"btn btn-secondary" %>
+<%= link_to "Créer les poules", generate_poules_path, class:"btn btn-secondary" %>
 
 
 

@@ -19,6 +19,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_06_172845) do
     t.string "nom_capitaine"
     t.string "telephone"
     t.string "email"
+    t.bigint "poule_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["poule_id"], name: "index_equipes_on_poule_id"
+  end
+
+  create_table "poules", force: :cascade do |t|
+    t.string "nom_poule"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

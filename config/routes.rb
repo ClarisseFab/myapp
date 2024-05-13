@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :poules do
+    collection do
+      get 'generate'
+    end
+  end
+  
   resources :equipes
   # get 'home/index'
   root 'home#index'
