@@ -11,8 +11,8 @@
     </div>
   <% end %>
 
-  <div class="form-group form-floating mb-3">
-    <%= form.text_field :nom_equipe, class:"form-control", placeholder:"Nom de l'équipe" %>
+  <div class="form-group form-floating mb-3 required">
+    <%= form.text_field :nom_equipe, class:"form-control", placeholder:"Nom de l'équipe", :required => true%>
     <%= form.label :nom_equipe, style: "display: block" %>
   </div>
 

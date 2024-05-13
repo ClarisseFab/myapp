@@ -18,13 +18,14 @@
         <th><%= equipe.telephone %></th>
         <th><%= equipe.email %></th>
         <th><%= link_to "Editer", edit_equipe_path(equipe), class:"btn btn-outline-primary btn-sm" %></th>
-        <th><%= button_to "Supprimer", equipe, method: :delete, class:"btn btn-outline-danger btn-sm" %></th>
+        <th><%= button_to "Supprimer", equipe, method: :delete, class:"btn btn-outline-danger btn-sm", form: { data: { turbo_confirm: "Es-tu sûr de vouloir supprimer cette équipe ?" } } %></th>
       </tr>
     <% end %> 
   </tbody>
 </table>
 <br>
 <%= link_to "Ajouter une équipe", new_equipe_path, class:"btn btn-secondary" %>
+<%= link_to "Créer les poules", poules_path, class:"btn btn-secondary" %>
 
 
 

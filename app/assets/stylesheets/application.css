@@ -25,3 +25,8 @@ h1{
 .nav-link-custom, .navbar-title-custom{
     color: white; 
 }
+
+.required :after {
+content: "*"; 
+color: red; 
+}
