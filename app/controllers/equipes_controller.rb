@@ -57,6 +57,21 @@ class EquipesController < ApplicationController
     end
   end
 
+  def test 
+    @equipe_all = Equipe.all
+    @equipe_all.destroy_all
+    @equipes_test = ["Polo", "P'tit Sherlock", "Polo le ptit homme de ménage", "Polo le ptit chef", "Polochon", "Polo apprend à bloquer", "Polo a mal au dos", "Poli", "Polo le ptit mique", "Clacla la GRANDE volleyeuse", "Asul 5", "Asul 2", "Les zippeuses", "Asul 16", "Fred", "Asul 1"]
+    @i = 0
+    @equipes_test.each do |equipe_test|
+      @equipe = Equipe.new()
+      @equipe.nom_equipe = @equipes_test[@i]
+      @equipe.save
+      @i=@i+1
+    end 
+    redirect_to equipes_url
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_equipe
