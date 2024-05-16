@@ -15,8 +15,8 @@
       <% end %>
 
       <div class="field form-group form-floating mb-3">
-        <%= f.password_field :nouveau_mot_de_passe, autocomplete: "new-password", class:"form-control", placeholder: "Mot de passe" %>
-        <%= f.label :nouveau_mot_de_passe %> 
+        <%= f.password_field :new_password, autocomplete: "new-password", class:"form-control", placeholder: "Mot de passe" %>
+        <%= f.label :new_password %> 
         <% if @minimum_password_length %>
           <em><%= @minimum_password_length %> caractères minimum</em>
           <i>(laisser en blanc si vous ne voulez pas le changer)</i><br />
@@ -24,13 +24,13 @@
       </div>
 
       <div class="field form-group form-floating mb-3">
-        <%= f.password_field :confirmation_mot_de_passe, autocomplete: "new-password", class:"form-control", placeholder: "Mot de passe" %>
-        <%= f.label :confirmation_mot_de_passe %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", placeholder: "Mot de passe" %>
+        <%= f.label :password_confirmation %>
       </div>
 
       <div class="field form-group form-floating mb-3">
-        <%= f.password_field :mot_de_passe_actuel, autocomplete: "current-password", class:"form-control", placeholder: "mot de passe" %>
-        <%= f.label :mot_de_passe_actuel %> <i>(nous avons besoin de votre mot de passe actuel pour valider les changements)</i><br />
+        <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control", placeholder: "mot de passe" %>
+        <%= f.label :current_password %> <i>(nous avons besoin de votre mot de passe actuel pour valider les changements)</i><br />
       </div>
 
       <div class="actions">
