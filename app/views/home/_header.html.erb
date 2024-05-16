@@ -6,15 +6,33 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <%= link_to 'Ajouter équipe', new_equipe_path , class:"nav-link nav-link-custom"%>
-        </li>
+        
         <li class="nav-item">
           <%= link_to 'Equipes', equipes_path , class:"nav-link nav-link-custom"%>
         </li>
         <li class="nav-item">
           <%= link_to 'Poules', poules_path , class:"nav-link nav-link-custom"%>
         </li>
+
+        <% if user_signed_in?%>
+          <li class="nav-item">
+            <li class="nav-item">
+          <%= link_to 'Ajouter équipe', new_equipe_path , class:"nav-link nav-link-custom"%>
+        </li>
+            <%= link_to 'Deconnexion',  destroy_user_session_path , method: :delete, class:"nav-link nav-link-custom"%>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Editer mon profil', edit_user_registration_path , class:"nav-link nav-link-custom"%>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to 'Connexion', new_user_session_path , class:"nav-link nav-link-custom"%>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Inscription', new_user_registration_path , class:"nav-link nav-link-custom"%>
+          </li>
+        <% end %>
+        
       </ul>
       
     </div>

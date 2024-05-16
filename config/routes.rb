@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
+  devise_for :users
+  
   resources :poules do
     collection do
       get 'generate'
     end
   end
   
-  resources :equipes
+  resources :equipes do
+    collection do
+      get 'test'
+    end
+  end
   # get 'home/index'
   root 'home#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

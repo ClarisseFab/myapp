@@ -1,0 +1,56 @@
+<div class="card">
+  <div class="card-body">
+    <h1>Editer mon profil <% resource_name.to_s.humanize %></h1>
+    <br>      
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field form-group form-floating mb-3">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder: "Email" %>
+        <%= f.label :email %>
+      </div>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <div class="field form-group form-floating mb-3">
+        <%= f.password_field :nouveau_mot_de_passe, autocomplete: "new-password", class:"form-control", placeholder: "Mot de passe" %>
+        <%= f.label :nouveau_mot_de_passe %> 
+        <% if @minimum_password_length %>
+          <em><%= @minimum_password_length %> caractères minimum</em>
+          <i>(laisser en blanc si vous ne voulez pas le changer)</i><br />
+        <% end %>
+      </div>
+
+      <div class="field form-group form-floating mb-3">
+        <%= f.password_field :confirmation_mot_de_passe, autocomplete: "new-password", class:"form-control", placeholder: "Mot de passe" %>
+        <%= f.label :confirmation_mot_de_passe %>
+      </div>
+
+      <div class="field form-group form-floating mb-3">
+        <%= f.password_field :mot_de_passe_actuel, autocomplete: "current-password", class:"form-control", placeholder: "mot de passe" %>
+        <%= f.label :mot_de_passe_actuel %> <i>(nous avons besoin de votre mot de passe actuel pour valider les changements)</i><br />
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Editer", class:"btn btn-outline-success" %>
+  </div>
+<% end %>
+
+  </div>
+</div>
+
+<br>
+
+<div class="card">
+  <div class="card-body">
+    <h1>Supprimer mon compte</h1>
+    <br>
+    <div>Vous en avez marre ?</div>
+    <br>
+    <%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Est-ce que vous êtes sûr ?", turbo_confirm: "Est-ce que vous êtes sûr ?" }, method: :delete, class:"btn btn-danger" %>
+  </div>
+</div>
+
+<%= link_to "Back", :back %>
