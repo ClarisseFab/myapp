@@ -3,7 +3,7 @@ class PoulesController < ApplicationController
 
   # GET /poules or /poules.json
   def index
-    @poules = Poule.all
+    @poules = Poule.where(user_id: current_user.id)
   end
 
   # GET /poules/1 or /poules/1.json
@@ -59,12 +59,12 @@ class PoulesController < ApplicationController
 
 
 def generate
-  @equipes_all = Equipe.all
+  @equipes_all = Equipe.where(user_id: current_user.id)
   if (@equipes_all.length != 16)
     flash[:notice] = "Attention, il faut 16 équipes pour créer des poules !"
     redirect_to equipes_url
   else
-    @vieilles_poules = Poule.all
+    @vieilles_poules = Poule.where(user_id: current_user.id)
     @vieilles_poules.destroy_all
     @equipes_all = @equipes_all.shuffle()
     @letters_array = ["A", "B", "C", "D"]
@@ -73,6 +73,7 @@ def generate
       @equipes_random_four= @equipes_all.slice(0, 4)
       @poule = Poule.new()
       @poule.nom_poule = @letters_array[@i]
+      @poule.user_id = current_user.id
       @poule.equipes = @equipes_random_four
       @poule.save
       @equipes_all =  @equipes_all - @equipes_random_four
@@ -92,7 +93,7 @@ end
 
     # Only allow a list of trusted parameters through.
     def poule_params
-      params.require(:poule).permit(:equipe_1, :equipe_2, :equipe_3, :equipe_4)
+      params.require(:poule).permit(:user_id)
     end
 end
 
