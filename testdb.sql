@@ -46,7 +46,8 @@ CREATE TABLE public.equipes (
     email character varying,
     poule_id bigint,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    user_id integer
 );
 
 
@@ -120,6 +121,45 @@ CREATE TABLE public.schema_migrations (
 ALTER TABLE public.schema_migrations OWNER TO clarisse;
 
 --
+-- Name: users; Type: TABLE; Schema: public; Owner: clarisse
+--
+
+CREATE TABLE public.users (
+    id bigint NOT NULL,
+    email character varying DEFAULT ''::character varying NOT NULL,
+    encrypted_password character varying DEFAULT ''::character varying NOT NULL,
+    reset_password_token character varying,
+    reset_password_sent_at timestamp(6) without time zone,
+    remember_created_at timestamp(6) without time zone,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+ALTER TABLE public.users OWNER TO clarisse;
+
+--
+-- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: clarisse
+--
+
+CREATE SEQUENCE public.users_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.users_id_seq OWNER TO clarisse;
+
+--
+-- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: clarisse
+--
+
+ALTER SEQUENCE public.users_id_seq OWNED BY public.users.id;
+
+
+--
 -- Name: equipes id; Type: DEFAULT; Schema: public; Owner: clarisse
 --
 
@@ -131,6 +171,13 @@ ALTER TABLE ONLY public.equipes ALTER COLUMN id SET DEFAULT nextval('public.equi
 --
 
 ALTER TABLE ONLY public.poules ALTER COLUMN id SET DEFAULT nextval('public.poules_id_seq'::regclass);
+
+
+--
+-- Name: users id; Type: DEFAULT; Schema: public; Owner: clarisse
+--
+
+ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_id_seq'::regclass);
 
 
 --
@@ -146,23 +193,7 @@ environment	development	2024-05-13 13:33:50.218241	2024-05-13 13:33:50.218245
 -- Data for Name: equipes; Type: TABLE DATA; Schema: public; Owner: clarisse
 --
 
-COPY public.equipes (id, nom_equipe, nom_capitaine, telephone, email, poule_id, created_at, updated_at) FROM stdin;
-21	Asul 1	Fred	0604023849	fred@gmail.com	\N	2024-05-13 15:44:42.166061	2024-05-13 15:44:42.166061
-22	Asul 2	Paul	0604023848	paul@gmail.com	\N	2024-05-13 15:45:02.391245	2024-05-13 15:45:02.391245
-23	Asul 3	Laure	0604023854	laure@gmail.com	\N	2024-05-13 15:45:19.353191	2024-05-13 15:45:19.353191
-24	Asul 4	Marion	0654023849	marion@gmail.com	\N	2024-05-13 15:45:38.768023	2024-05-13 15:45:38.768023
-25	Asul 5	Gaël	0604063849	gael@gmail.com	\N	2024-05-13 15:46:03.676231	2024-05-13 15:46:03.676231
-26	Asul 6	Adrien	0604023099	adrien@gmail.com	\N	2024-05-13 15:46:29.910592	2024-05-13 15:46:29.910592
-27	Asul 7 	Thomas	0604093849	thomas@gmail.com	\N	2024-05-13 15:46:53.984156	2024-05-13 15:46:53.984156
-28	Asul 8	Lloris	0604001849	lloris@gmail.com	\N	2024-05-13 15:47:24.223719	2024-05-13 15:47:24.223719
-29	Asul 9	Igor	0604023800	igor@gmail.com	\N	2024-05-13 15:47:40.675815	2024-05-13 15:47:40.675815
-30	Asul 10	Julie	0604023811	julie@gmail.com	\N	2024-05-13 15:48:03.725606	2024-05-13 15:48:03.725606
-31	Asul 11	Pauline	0604023822	pauline@gmail.com	\N	2024-05-13 15:48:22.793333	2024-05-13 15:48:22.793333
-32	Asul 12	Emmanuelle	0604023833	manue@gmail.com	\N	2024-05-13 15:48:41.898349	2024-05-13 15:48:41.898349
-33	Asul 13	Rémi	0604023844	remi@gmail.com	\N	2024-05-13 15:49:09.800432	2024-05-13 15:49:09.800432
-34	Asul 14	Elea	0604023855	elea@gmail.com	\N	2024-05-13 15:49:28.363842	2024-05-13 15:49:28.363842
-35	Asul 15	Stéphanie	0604023866	stephanie@gmail.com	\N	2024-05-13 15:49:53.721708	2024-05-13 15:49:53.721708
-36	Asul 16	Marie	0604023877	marie@gmail.com	\N	2024-05-13 15:50:15.42131	2024-05-13 15:50:15.42131
+COPY public.equipes (id, nom_equipe, nom_capitaine, telephone, email, poule_id, created_at, updated_at, user_id) FROM stdin;
 \.
 
 
@@ -171,10 +202,10 @@ COPY public.equipes (id, nom_equipe, nom_capitaine, telephone, email, poule_id, 
 --
 
 COPY public.poules (id, nom_poule, created_at, updated_at) FROM stdin;
-158	A	2024-05-13 15:31:57.961685	2024-05-13 15:31:57.961685
-159	B	2024-05-13 15:31:57.993257	2024-05-13 15:31:57.993257
-160	C	2024-05-13 15:31:58.027097	2024-05-13 15:31:58.027097
-161	D	2024-05-13 15:31:58.05942	2024-05-13 15:31:58.05942
+222	A	2024-05-16 09:03:31.865764	2024-05-16 09:03:31.865764
+223	B	2024-05-16 09:03:31.915936	2024-05-16 09:03:31.915936
+224	C	2024-05-16 09:03:31.962104	2024-05-16 09:03:31.962104
+225	D	2024-05-16 09:03:32.014351	2024-05-16 09:03:32.014351
 \.
 
 
@@ -184,6 +215,18 @@ COPY public.poules (id, nom_poule, created_at, updated_at) FROM stdin;
 
 COPY public.schema_migrations (version) FROM stdin;
 20240506172845
+20240516073045
+20240516164613
+20240516175248
+\.
+
+
+--
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: clarisse
+--
+
+COPY public.users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, created_at, updated_at) FROM stdin;
+4	clarisse.fabreges@free.fr	$2a$12$It6HK17SuuWQvT6LIfXgf.E7fuOkGJtMzI6pDbR6IPVle5Zzg9Ch2	\N	\N	\N	2024-05-16 17:56:02.276392	2024-05-16 17:56:02.276392
 \.
 
 
@@ -191,14 +234,21 @@ COPY public.schema_migrations (version) FROM stdin;
 -- Name: equipes_id_seq; Type: SEQUENCE SET; Schema: public; Owner: clarisse
 --
 
-SELECT pg_catalog.setval('public.equipes_id_seq', 36, true);
+SELECT pg_catalog.setval('public.equipes_id_seq', 247, true);
 
 
 --
 -- Name: poules_id_seq; Type: SEQUENCE SET; Schema: public; Owner: clarisse
 --
 
-SELECT pg_catalog.setval('public.poules_id_seq', 161, true);
+SELECT pg_catalog.setval('public.poules_id_seq', 225, true);
+
+
+--
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: clarisse
+--
+
+SELECT pg_catalog.setval('public.users_id_seq', 4, true);
 
 
 --
@@ -234,10 +284,39 @@ ALTER TABLE ONLY public.schema_migrations
 
 
 --
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: clarisse
+--
+
+ALTER TABLE ONLY public.users
+    ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: index_equipes_on_poule_id; Type: INDEX; Schema: public; Owner: clarisse
 --
 
 CREATE INDEX index_equipes_on_poule_id ON public.equipes USING btree (poule_id);
+
+
+--
+-- Name: index_equipes_on_user_id; Type: INDEX; Schema: public; Owner: clarisse
+--
+
+CREATE INDEX index_equipes_on_user_id ON public.equipes USING btree (user_id);
+
+
+--
+-- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: clarisse
+--
+
+CREATE UNIQUE INDEX index_users_on_email ON public.users USING btree (email);
+
+
+--
+-- Name: index_users_on_reset_password_token; Type: INDEX; Schema: public; Owner: clarisse
+--
+
+CREATE UNIQUE INDEX index_users_on_reset_password_token ON public.users USING btree (reset_password_token);
 
 
 --
