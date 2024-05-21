@@ -3,7 +3,7 @@ class EquipesController < ApplicationController
 
   # GET /equipes or /equipes.json
   def index
-    @equipes = Equipe.all
+    @equipes = Equipe.where(user_id: current_user.id)
   end
 
   # GET /equipes/1 or /equipes/1.json
@@ -58,13 +58,14 @@ class EquipesController < ApplicationController
   end
 
   def test 
-    @equipe_all = Equipe.all
+    @equipe_all = Equipe.where(user_id: current_user.id)
     @equipe_all.destroy_all
     @equipes_test = ["Polo", "P'tit Sherlock", "Polo le ptit homme de ménage", "Polo le ptit chef", "Polochon", "Polo apprend à bloquer", "Polo a mal au dos", "Poli", "Polo le ptit mique", "Clacla la GRANDE volleyeuse", "Asul 5", "Asul 2", "Les zippeuses", "Asul 16", "Fred", "Asul 1"]
     @i = 0
     @equipes_test.each do |equipe_test|
       @equipe = Equipe.new()
       @equipe.nom_equipe = @equipes_test[@i]
+      @equipe.user_id = current_user.id
       @equipe.save
       @i=@i+1
     end 
@@ -80,6 +81,6 @@ class EquipesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def equipe_params
-      params.require(:equipe).permit(:nom_equipe, :nom_capitaine, :telephone, :email, :poule_id)
+      params.require(:equipe).permit(:nom_equipe, :nom_capitaine, :telephone, :email, :poule_id, :user_id)
     end
 end
