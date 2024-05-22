@@ -28,4 +28,7 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  home:
+    index:
+      welcome: "Welcome!" 
+      message: "Welcome on our app to organisze your volleyball tournament: to make your life easier"
