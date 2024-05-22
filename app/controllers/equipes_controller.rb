@@ -1,13 +1,9 @@
 class EquipesController < ApplicationController
-  before_action :set_equipe, only: %i[ show edit update destroy ]
+  before_action :set_equipe, only: %i[edit update destroy]
 
   # GET /equipes or /equipes.json
   def index
     @equipes = Equipe.where(user_id: current_user.id)
-  end
-
-  # GET /equipes/1 or /equipes/1.json
-  def show
   end
 
   # GET /equipes/new
@@ -16,8 +12,7 @@ class EquipesController < ApplicationController
   end
 
   # GET /equipes/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /equipes or /equipes.json
   def create
@@ -57,30 +52,31 @@ class EquipesController < ApplicationController
     end
   end
 
-  def test 
+  def test
     @equipe_all = Equipe.where(user_id: current_user.id)
     @equipe_all.destroy_all
-    @equipes_test = ["Polo", "P'tit Sherlock", "Polo le ptit homme de ménage", "Polo le ptit chef", "Polochon", "Polo apprend à bloquer", "Polo a mal au dos", "Poli", "Polo le ptit mique", "Clacla la GRANDE volleyeuse", "Asul 5", "Asul 2", "Les zippeuses", "Asul 16", "Fred", "Asul 1"]
+    @equipes_test = ['Polo', "P'tit Sherlock", 'Polo le ptit homme de ménage', 'Polo le ptit chef', 'Polochon',
+                     'Polo apprend à bloquer', 'Polo a mal au dos', 'Poli', 'Polo le ptit mique', 'Clacla la GRANDE volleyeuse', 'Asul 5', 'Asul 2', 'Les zippeuses', 'Asul 16', 'Fred', 'Asul 1']
     @i = 0
-    @equipes_test.each do |equipe_test|
-      @equipe = Equipe.new()
+    @equipes_test.each do |_equipe_test|
+      @equipe = Equipe.new
       @equipe.nom_equipe = @equipes_test[@i]
       @equipe.user_id = current_user.id
       @equipe.save
-      @i=@i+1
-    end 
+      @i += 1
+    end
     redirect_to equipes_url
   end
 
-
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_equipe
-      @equipe = Equipe.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def equipe_params
-      params.require(:equipe).permit(:nom_equipe, :nom_capitaine, :telephone, :email, :poule_id, :user_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_equipe
+    @equipe = Equipe.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def equipe_params
+    params.require(:equipe).permit(:nom_equipe, :nom_capitaine, :telephone, :email, :poule_id, :user_id)
+  end
 end
