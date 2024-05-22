@@ -27,6 +27,7 @@ gem 'stimulus-rails'
 gem 'jbuilder'
 
 gem 'devise', '~> 4.9', '>= 4.9.4'
+gem 'devise-i18n'
 gem 'jquery-rails'
 gem 'rails-i18n'
 

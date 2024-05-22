@@ -31,4 +31,30 @@ en:
   home:
     index:
       welcome: "Welcome!" 
-      message: "Welcome on our app to organisze your volleyball tournament: to make your life easier"
+      message: "Welcome on our app to organize your volleyball tournament: to make your life easier"
+    header: 
+      teams: "Teams"
+      add_teams: "Add team"
+      pools: "Pools"
+      disconnect: "Sign out"
+      edit_profil: "Edit my profil"
+      connect: "Log in"
+      register: "Registration"
+  equipes: 
+    index: 
+      teams: "Teams"
+      team_name: "Team name"
+      captain_name: "Captain name"
+      phone: "Phone"
+      email: 'Email'
+      actions: "Actions"
+      edit: "Edit"
+      delete: "Delete"
+      add_team: "Add a team"
+      create_pools: "Create pools"
+  poules: 
+    index: 
+      pools: "Pools"
+      pool_name: "Pool name"
+      team: "Team"
+      change_pools: "Change the pools"

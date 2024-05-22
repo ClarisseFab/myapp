@@ -1,11 +1,11 @@
-<h1>Poules</h1>
+<h1><%= t '.pools'%></h1>
 <br>
 <table class="table table-bordered table-hover table-striped">
   <thead class="table-danger">
     <tr>
-      <th scope="col">Nom poule</th>
+      <th scope="col"><%= t '.pool_name'%></th>
       <% @poules.first.equipes.each_with_index do |poule, index| %>
-      <th scope="col">Equipe <%= index+1 %></th>
+      <th scope="col"><%= t '.team'%> <%= index+1 %></th>
       <% end %> 
     </tr>
   </thead>
@@ -21,6 +21,6 @@
   </tbody>
 </table>
 <br>
-<%= link_to "Changer les poules", generate_poules_path, class:"btn btn-secondary" %>
+<%= link_to t('.change_pools'), generate_poules_path, class:"btn btn-secondary" %>
 
 
