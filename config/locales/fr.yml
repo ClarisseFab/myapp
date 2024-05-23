@@ -24,9 +24,42 @@ fr:
       delete: "Supprimer"
       add_team: "Ajouter une équipe"
       create_pools: "Créer les poules"
+    new: 
+      add_team: "Ajouter une nouvelle équipe"
+      back: "Retour à la liste des équipes"
+    edit: 
+      edit_team: "Editer l'équipe"
+      back: "Retour à la liste d'équipes"
+    form: 
+      validate: "Valider"
   poules: 
     index: 
       pools: "Poules"
       pool_name: "Nom poule"
       team: "Equipe"
       change_pools: "Changer les poules"
+  devise: 
+    registrations: 
+      edit: 
+        edit_profil: "Editer mon profil"
+        edit: "Editer"
+        min_characters: "caractères minimum (laisser en blanc si vous ne voulez pas le changer)"
+        current_password: "(nous avons besoin de votre mot de passe actuel pour valider les changements)"
+        delete_account: "Supprimer mon compte"
+        text: "Vous en avez marre ?"
+        delete: "Supprimer"
+      new: 
+        registration: "Inscription"
+        min_characters: "caractères minimum"
+        register: "S'inscrire"
+    shared: 
+      links: 
+        log_in: "Se connecter"
+        forgotten_password: "Mot de passe oublié ?"
+        register: "S'inscrire"
+    sessions: 
+      new: 
+        connection: "Connexion"
+        log_in: "Se connecter"
+
+

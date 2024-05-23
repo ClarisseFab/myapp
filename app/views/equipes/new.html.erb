@@ -1,9 +1,9 @@
-<h1>Ajouter une nouvelle équipe</h1>
+<h1><%= t '.add_team'%></h1>
 <br>
 <%= render "form", equipe: @equipe %>
 
 <br>
 
 <div>
-  <%= link_to "Retour à la liste d'équipes", equipes_path, class:"btn btn-secondary btn-sm" %>
+  <%= link_to t('.back'), equipes_path, class:"btn btn-secondary btn-sm" %>
 </div>

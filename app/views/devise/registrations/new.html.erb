@@ -1,4 +1,4 @@
-<h1>Inscription</h1>
+<h1><%= t '.registration' %></h1>
 
 <br>
 
@@ -14,7 +14,7 @@
     <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder: "Mot de passe" %>
     <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> caractères minimum)</em>
+    <em>(<%= @minimum_password_length %> <%= t '.min_characters' %>)</em>
     <% end %><br />
   </div>
 
@@ -24,7 +24,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "S'inscrire", class:"btn btn-success" %>
+    <%= f.submit t('.register'), class:"btn btn-success" %>
   </div>
 <% end %>
 

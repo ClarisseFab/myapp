@@ -31,7 +31,7 @@ en:
   home:
     index:
       welcome: "Welcome!" 
-      message: "Welcome on our app to organize your volleyball tournament: to make your life easier"
+      message: "Welcome on our app to organize your volleyball tournament: to make your life easier!"
     header: 
       teams: "Teams"
       add_teams: "Add team"
@@ -52,9 +52,40 @@ en:
       delete: "Delete"
       add_team: "Add a team"
       create_pools: "Create pools"
+    new: 
+      add_team: "Add a new team"
+      back: "Back to teams list"
+    edit: 
+      edit_team: "Edit team"
+      back: "Back to teams list"
+    form: 
+      validate: "Validate"
   poules: 
     index: 
       pools: "Pools"
       pool_name: "Pool name"
       team: "Team"
       change_pools: "Change the pools"
+  devise: 
+    registrations: 
+      edit:
+        edit_profil: "Edit my profil"
+        edit: "Edit"
+        min_characters: "characters minimum (leave blank if you don't want to change it)"
+        current_password: "(we need your current password to validate changes)"
+        delete_account: "Delete my account"
+        text: "You no longer need it?"
+        delete: "Delete"
+      new: 
+        registration: "Registration"
+        min_characters: "characters minimum"
+        register: "Register"
+    shared: 
+      links: 
+        log_in: "Log in"
+        forgotten_password: "Forgot your password?"
+        register: "Register"
+    sessions: 
+      new: 
+        connection: "Log in"
+        log_in: "Log in"
