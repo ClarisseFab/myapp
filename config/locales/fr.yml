@@ -32,6 +32,13 @@ fr:
       back: "Retour à la liste d'équipes"
     form: 
       validate: "Valider"
+  activerecord: 
+    attributes:
+      equipe:
+        nom_equipe: "Nom équipe"
+        nom_capitaine: "Nom capitaine"
+        telephone: "Télephone"
+        email: "Email"
   poules: 
     index: 
       pools: "Poules"

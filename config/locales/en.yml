@@ -60,6 +60,13 @@ en:
       back: "Back to teams list"
     form: 
       validate: "Validate"
+  activerecord: 
+    attributes:
+      equipe:
+        nom_equipe: "Team name"
+        nom_capitaine: "Captain name"
+        telephone: "Phone"
+        email: "Email"
   poules: 
     index: 
       pools: "Pools"
