@@ -39,17 +39,13 @@
           </li>
         </ul>
         <% end %>
-        <ul>
-        <% I18n.available_locales.each do |locale| %>
-          <li>
-            <% if I18n.locale == locale %>
-              <%= t(locale, scope: 'locales') %>
-            <% else %>
-              <%= link_to t(locale, scope: 'locales'), url_for(locale: locale) %>
-            <% end %>
-          </li>
-        <% end %>
+    
+      <ul>
+        <%= link_to "", { :locale=>'en' }, class:"fi fi-gb" %>
+        <%= link_to "", { :locale=>'fr' }, class:"fi fi-fr" %>
+        <%= link_to "", { :locale=>'es' }, class:"fi fi-es" %> 
       </ul>
+
       </ul>
       
     </div>
