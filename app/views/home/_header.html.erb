@@ -4,43 +4,48 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">    
   
         <% if user_signed_in?%>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <%= link_to 'Equipes', equipes_path , class:"nav-link nav-link-custom"%>
+            <%= link_to t('.teams'), equipes_path , class:"nav-link nav-link-custom"%>
           </li>        
           
           <li class="nav-item">
-            <%= link_to 'Ajouter équipe', new_equipe_path , class:"nav-link nav-link-custom"%>
+            <%= link_to t('.add_teams'), new_equipe_path , class:"nav-link nav-link-custom"%>
           </li>
           <% if Poule.where(user_id: current_user.id).any? %>
             <li class="nav-item">
-              <%= link_to 'Poules', poules_path , class:"nav-link nav-link-custom"%>
+              <%= link_to t('.pools'), poules_path , class:"nav-link nav-link-custom"%>
             </li>            
           <% end %> 
           </ul> 
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <%= link_to 'Deconnexion',  destroy_user_session_path , method: :delete, class:"nav-link nav-link-custom"%>
+            <%= link_to t('.disconnect'),  destroy_user_session_path , method: :delete, class:"nav-link nav-link-custom"%>
           </li>
           <li class="nav-item">
-            <%= link_to 'Editer mon profil', edit_user_registration_path , class:"nav-link nav-link-custom"%>
+            <%= link_to t('.edit_profil'), edit_user_registration_path , class:"nav-link nav-link-custom"%>
           </li>
           </ul>
         <% else %>
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <%= link_to 'Connexion', new_user_session_path , class:"nav-link nav-link-custom"%>
+            <%= link_to t('.connect'), new_user_session_path , class:"nav-link nav-link-custom"%>
           </li>
           <li class="nav-item">
-            <%= link_to 'Inscription', new_user_registration_path , class:"nav-link nav-link-custom"%>
+            <%= link_to t('.register'), new_user_registration_path , class:"nav-link nav-link-custom"%>
           </li>
         </ul>
         <% end %>
-        
+    
+      <ul>
+        <%= link_to "", { :locale=>'en' }, class:"fi fi-gb" %>
+        <%= link_to "", { :locale=>'fr' }, class:"fi fi-fr" %>
+        <%= link_to "", { :locale=>'es' }, class:"fi fi-es" %> 
+      </ul>
+
       </ul>
       
     </div>

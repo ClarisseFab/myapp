@@ -13,20 +13,25 @@
  *= require_tree .
  *= require_self
  */
-.navbar-custom{
+.navbar-custom {
     background-color: rgb(139, 2, 43);
 }
 
-h1{
-    color:rgb(139, 2, 43); 
-    font-size: 2em; 
+h1 {
+    color: rgb(139, 2, 43);
+    font-size: 2em;
 }
 
-.nav-link-custom, .navbar-title-custom{
-    color: white; 
+.nav-link-custom,
+.navbar-title-custom {
+    color: white;
 }
 
 .required :after {
-content: "*"; 
-color: red; 
+    content: "*";
+    color: red;
+}
+
+.fi {
+    text-decoration: none;
 }

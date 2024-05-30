@@ -1,9 +1,9 @@
-<h1>Editer l'equipe</h1>
+<h1><%= t '.edit_team' %></h1>
 
 <%= render "form", equipe: @equipe %>
 
 <br>
 
 <div>
-  <%= link_to "Retour à la liste d'équipes", equipes_path, class:"btn btn-secondary btn-sm"%>
+  <%= link_to t('.back'), equipes_path, class:"btn btn-secondary btn-sm"%>
 </div>

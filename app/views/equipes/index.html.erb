@@ -1,15 +1,15 @@
-<h1>Equipes</h1>
+<h1><%= t '.teams' %></h1>
 <br>
 <%= link_to "Test", test_equipes_path, class:"btn btn-outline-danger btn-sm"%>
 <br>
 <table class="table table-bordered table-hover table-striped">
   <thead class="table-danger">
     <tr>
-      <th scope="col">Nom équipe</th>
-      <th scope="col">Nom capitaine</th>
-      <th scope="col">Téléphone</th>
-      <th scope="col">Email</th>
-      <th colspan="2">Actions</th>
+      <th scope="col"><%= t '.team_name' %></th>
+      <th scope="col"><%= t '.captain_name' %></th>
+      <th scope="col"><%= t '.phone' %></th>
+      <th scope="col"><%= t '.email' %></th>
+      <th colspan="2"><%= t '.actions' %></th>
     </tr>
   </thead>
   <tbody>
@@ -19,15 +19,15 @@
         <th><%= equipe.nom_capitaine %></th>
         <th><%= equipe.telephone %></th>
         <th><%= equipe.email %></th>
-        <th><%= link_to "Editer", edit_equipe_path(equipe), class:"btn btn-outline-primary btn-sm" %></th>
-        <th><%= button_to "Supprimer", equipe, method: :delete, class:"btn btn-outline-danger btn-sm", form: { data: { turbo_confirm: "Es-tu sûr de vouloir supprimer cette équipe ?" } } %></th>
+        <th><%= link_to t('.edit'), edit_equipe_path(equipe), class:"btn btn-outline-primary btn-sm" %></th>
+        <th><%= button_to t('.delete'), equipe, method: :delete, class:"btn btn-outline-danger btn-sm", form: { data: { turbo_confirm: "Es-tu sûr de vouloir supprimer cette équipe ?" } } %></th>
       </tr>
     <% end %> 
   </tbody>
 </table>
 <br>
-<%= link_to "Ajouter une équipe", new_equipe_path, class:"btn btn-secondary" %>
-<%= link_to "Créer les poules", generate_poules_path, class:"btn btn-secondary" %>
+<%= link_to t('.add_team'), new_equipe_path, class:"btn btn-secondary" %>
+<%= link_to t('.create_pools'), generate_poules_path, class:"btn btn-secondary" %>
 
 
 

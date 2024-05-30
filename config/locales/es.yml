@@ -1,0 +1,69 @@
+es:
+  home:
+    index:
+      welcome: "Bienvenido !"
+      message: "Bienvenido a nuestra aplicación de organización de torneos de voleibol: ¡para hacerte la vida más fácil!" 
+    header: 
+      teams: "Equipos"
+      add_teams: "Añadir equipo"
+      pools: "Ligas"
+      disconnect: "Fin de sesión"
+      edit_profil: "Editar mi perfil"
+      connect: "Conexión"
+      register: "Inscripción"
+  equipes: 
+    index: 
+      teams: "Equipos"
+      team_name: "Nombre equipo"
+      captain_name: "Nombre capitán"
+      phone: "Teléfono"
+      email: "Correo"
+      actions: "Acción"
+      edit: "Editar"
+      delete: "Suprimir"
+      add_team: "Añadir un equipo"
+      create_pools: "Crear las ligas"
+    new: 
+      add_team: "Añadir un nuevo equipo"
+      back: "Volver a la lista de los equipos"
+    edit: 
+      edit_team: "Editar equipo"
+      back: "Volver a la lista de los equipos"
+    form: 
+      validate: "Validar"
+  activerecord: 
+    attributes:
+      equipe:
+        nom_equipe: "Nombre equipo"
+        nom_capitaine: "Nombre capitán"
+        telephone: "Teléfono"
+        email: "Correo"
+  poules: 
+    index: 
+      pools: "Ligas"
+      pool_name: "Nombre ligas"
+      team: "Equipo"
+      change_pools: "Cambiar las ligas"
+  devise: 
+    registrations: 
+      edit: 
+        edit_profil: "Editar mi perfil"
+        edit: "Editar"
+        min_characters: "caracteres mínimos (déjelo en blanco si no desea cambiarlo)"
+        current_password: "(Necesitamos su contraseña actual para validar los cambios)"
+        delete_account: "Suprimir mi cuenta"
+        text: "Estás harto ?"
+        delete: "Suprimir"
+      new: 
+        registration: "Inscripción"
+        min_characters: "caracteres mínimos"
+        register: "Inscribirse"
+    shared: 
+      links: 
+        log_in: "Conectarse"
+        forgotten_password: "Contraseña olvidada?"
+        register: "Inscribirse"
+    sessions: 
+      new: 
+        connection: "Conexión"
+        log_in: "Conectarse"

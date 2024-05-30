@@ -1,0 +1,72 @@
+
+fr:
+  home:
+    index:
+      welcome: "Bienvenue !"
+      message: "Bienvenue sur notre application d'organisation de tournois de volley : pour vour simplifier la vie !" 
+    header: 
+      teams: "Equipes"
+      add_teams: "Ajouter équipe"
+      pools: "Poules"
+      disconnect: "Déconnexion"
+      edit_profil: "Editer mon profil"
+      connect: "Connexion"
+      register: "Inscription"
+  equipes: 
+    index: 
+      teams: "Equipes"
+      team_name: "Nom équipes"
+      captain_name: "Nom capitaine"
+      phone: "Téléphone"
+      email: 'Email'
+      actions: "Actions"
+      edit: "Editer"
+      delete: "Supprimer"
+      add_team: "Ajouter une équipe"
+      create_pools: "Créer les poules"
+    new: 
+      add_team: "Ajouter une nouvelle équipe"
+      back: "Retour à la liste des équipes"
+    edit: 
+      edit_team: "Editer l'équipe"
+      back: "Retour à la liste d'équipes"
+    form: 
+      validate: "Valider"
+  activerecord: 
+    attributes:
+      equipe:
+        nom_equipe: "Nom équipe"
+        nom_capitaine: "Nom capitaine"
+        telephone: "Télephone"
+        email: "Email"
+  poules: 
+    index: 
+      pools: "Poules"
+      pool_name: "Nom poule"
+      team: "Equipe"
+      change_pools: "Changer les poules"
+  devise: 
+    registrations: 
+      edit: 
+        edit_profil: "Editer mon profil"
+        edit: "Editer"
+        min_characters: "caractères minimum (laisser en blanc si vous ne voulez pas le changer)"
+        current_password: "(nous avons besoin de votre mot de passe actuel pour valider les changements)"
+        delete_account: "Supprimer mon compte"
+        text: "Vous en avez marre ?"
+        delete: "Supprimer"
+      new: 
+        registration: "Inscription"
+        min_characters: "caractères minimum"
+        register: "S'inscrire"
+    shared: 
+      links: 
+        log_in: "Se connecter"
+        forgotten_password: "Mot de passe oublié ?"
+        register: "S'inscrire"
+    sessions: 
+      new: 
+        connection: "Connexion"
+        log_in: "Se connecter"
+
+
