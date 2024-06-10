@@ -7,7 +7,7 @@ class PoulesController < ApplicationController
   def generate
     @equipes_all = Equipe.where(user_id: current_user.id)
     if @equipes_all.length != 16
-      flash[:notice] = 'Attention, il faut 16 équipes pour créer des poules !'
+      flash[:notice] = t('activerecord.careful.messages')
       redirect_to equipes_url
     else
       @vieilles_poules = Poule.where(user_id: current_user.id)
@@ -26,7 +26,7 @@ class PoulesController < ApplicationController
         @i += 1
       end
       redirect_to poules_url
-      flash[:notice] = 'Les poules ont bien été créées'
+      flash[:notice] = t('activerecord.successful.messages.created.pools')
     end
   end
 end

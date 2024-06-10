@@ -1,6 +1,7 @@
 <h1><%= t '.teams' %></h1>
 <br>
 <%= link_to "Test", test_equipes_path, class:"btn btn-outline-danger btn-sm"%>
+<%= link_to t('.delete_all'), reset_equipes_path, class:"btn btn-outline-danger btn-sm"%>
 <br>
 <table class="table table-bordered table-hover table-striped">
   <thead class="table-danger">
@@ -20,7 +21,11 @@
         <th><%= equipe.telephone %></th>
         <th><%= equipe.email %></th>
         <th><%= link_to t('.edit'), edit_equipe_path(equipe), class:"btn btn-outline-primary btn-sm" %></th>
-        <th><%= button_to t('.delete'), equipe, method: :delete, class:"btn btn-outline-danger btn-sm", form: { data: { turbo_confirm: "Es-tu sûr de vouloir supprimer cette équipe ?" } } %></th>
+        <%if (Poule.where(user_id: current_user.id).any?)%>
+          <th><%= button_to t('.delete'), equipe, method: :delete, class:"btn btn-outline-danger btn-sm", form: { data: { :turbo_confirm => t('.confirm_delete_pools') } } %></th>
+        <%else%>
+          <th><%= button_to t('.delete'), equipe, method: :delete, class:"btn btn-outline-danger btn-sm", form: { data: {:confirm => t('.confirm_delete') } } %></th>
+        <%end%>
       </tr>
     <% end %> 
   </tbody>
