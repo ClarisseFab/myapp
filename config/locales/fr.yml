@@ -24,6 +24,9 @@ fr:
       delete: "Supprimer"
       add_team: "Ajouter une équipe"
       create_pools: "Créer les poules"
+      delete_all: "Supprimer toutes les équipes"
+      confirm_delete: "Es-tu sûr de vouloir supprimer cette équipe ?"
+      confirm_delete_pools: "Des poules ont été générées : supprimer l'équipe va également supprimer les poules. Es-tu sûr de vouloir supprimer cette équipe ?"
     new: 
       add_team: "Ajouter une nouvelle équipe"
       back: "Retour à la liste des équipes"
@@ -39,6 +42,17 @@ fr:
         nom_capitaine: "Nom capitaine"
         telephone: "Télephone"
         email: "Email"
+    successful: 
+      messages: 
+        created: 
+          team: "L'équipe a bien été créée !"
+          pools: "Les poules ont bien été créées"
+        updated: 
+          team: "L'équipe a bien été mise à jour"
+        deleted: 
+          team: "L'équipe a bien été supprimée"
+    careful: 
+      messages: "Attention, il faut 16 équipes pour créer des poules !"
   poules: 
     index: 
       pools: "Poules"

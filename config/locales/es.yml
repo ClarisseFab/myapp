@@ -23,6 +23,9 @@ es:
       delete: "Suprimir"
       add_team: "Añadir un equipo"
       create_pools: "Crear las ligas"
+      delete_all: "Suprimir todos los equipos"
+      confirm_delete: "¿Estás seguro de que quieres suprimir este equipo? ?"
+      confirm_delete_pools: "Se han generado ligas: suprimir el equipo también suprimirá las ligas. ¿Está seguro de que desea suprimir este equipo?"
     new: 
       add_team: "Añadir un nuevo equipo"
       back: "Volver a la lista de los equipos"
@@ -38,6 +41,17 @@ es:
         nom_capitaine: "Nombre capitán"
         telephone: "Teléfono"
         email: "Correo"
+    successful: 
+      messages: 
+        created: 
+          team: "El equipo fue creado!"
+          pools: "Las ligas fueron creados"
+        updated: 
+          team: "El equipo esta actualizado"
+        deleted: 
+          team: "El equipo esta suprimido"
+    careful: 
+      messages: "Cuidado, necesitas 16 equipos para crear ligas!"
   poules: 
     index: 
       pools: "Ligas"

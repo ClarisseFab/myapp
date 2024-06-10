@@ -15,7 +15,7 @@
           <li class="nav-item">
             <%= link_to t('.add_teams'), new_equipe_path , class:"nav-link nav-link-custom"%>
           </li>
-          <% if Poule.where(user_id: current_user.id).any? %>
+          <% if (Poule.where(user_id: current_user.id).any?) && (Equipe.where(user_id: current_user.id).any?) %>
             <li class="nav-item">
               <%= link_to t('.pools'), poules_path , class:"nav-link nav-link-custom"%>
             </li>            

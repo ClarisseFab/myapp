@@ -52,6 +52,9 @@ en:
       delete: "Delete"
       add_team: "Add a team"
       create_pools: "Create pools"
+      delete_all: "Delete all teams"
+      confirm_delete: "Are you sure that you want to delete this team"
+      confirm_delete_pools: "Pools have been generated: deleting the team will also delete the pools. Are you sure that you want to delete this team?"
     new: 
       add_team: "Add a new team"
       back: "Back to teams list"
@@ -67,6 +70,17 @@ en:
         nom_capitaine: "Captain name"
         telephone: "Phone"
         email: "Email"
+    successful: 
+      messages: 
+        created: 
+          team: "The team has been created!"
+          pools: "Pools have been created"
+        updated: 
+          team: "The team has been updated"
+        deleted: 
+          team: "The team has been deleted"
+    careful: 
+      messages: "Be careful, you need 16 teams to create pools!"
   poules: 
     index: 
       pools: "Pools"

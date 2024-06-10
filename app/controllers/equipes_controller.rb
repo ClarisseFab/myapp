@@ -20,7 +20,7 @@ class EquipesController < ApplicationController
 
     respond_to do |format|
       if @equipe.save
-        format.html { redirect_to equipes_url, notice: "L'équipe a bien été créée !" }
+        format.html { redirect_to equipes_url, notice: t('activerecord.successful.messages.created.team') }
         format.json { head :no_content }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -33,7 +33,7 @@ class EquipesController < ApplicationController
   def update
     respond_to do |format|
       if @equipe.update(equipe_params)
-        format.html { redirect_to equipes_url, notice: "L'équipe a bien été mise à jour" }
+        format.html { redirect_to equipes_url, notice: t('activerecord.successful.messages.updated.team') }
         format.json { head :no_content }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -45,9 +45,10 @@ class EquipesController < ApplicationController
   # DELETE /equipes/1 or /equipes/1.json
   def destroy
     @equipe.destroy!
-
+    @poule_all = Poule.where(user_id: current_user.id)
+    @poule_all.destroy_all
     respond_to do |format|
-      format.html { redirect_to equipes_url, notice: "L'équipe a bien été supprimée" }
+      format.html { redirect_to equipes_url, notice: t('activerecord.successful.messages.deleted.team') }
       format.json { head :no_content }
     end
   end
@@ -65,6 +66,14 @@ class EquipesController < ApplicationController
       @equipe.save
       @i += 1
     end
+    redirect_to equipes_url
+  end
+
+  def reset
+    @equipe_all = Equipe.where(user_id: current_user.id)
+    @equipe_all.destroy_all
+    @poule_all = Poule.where(user_id: current_user.id)
+    @poule_all.destroy_all
     redirect_to equipes_url
   end
 
