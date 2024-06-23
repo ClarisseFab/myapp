@@ -2,6 +2,7 @@ class MatchesController < ApplicationController
   # GET /matches or /matches.json
   def index
     @matches = Match.where(user_id: current_user.id)
+    @poules = Poule.where(user_id: current_user.id)
   end
 
   def generate

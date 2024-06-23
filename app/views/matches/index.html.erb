@@ -1,14 +1,40 @@
-<p style="color: green"><%= notice %></p>
-
 <h1>Matches</h1>
 
-<div id="matches">
-  <% @matches.each do |match| %>
-    <%= render match %>
-    <p>
-      <%= link_to "Show this match", match %>
-    </p>
-  <% end %>
-</div>
+<br>
 
-<%= link_to "New match", new_match_path %>
+<% @poules.each do |poule| %>
+<table class="table table-bordered table-hover table-striped">
+  <h4><%= poule.nom_poule %></h4>
+  <thead class="table-danger">
+    <tr>
+      <th scope="col">Equipe 1</th>
+      <th scope="col">Equipe 2</th>
+      <th colspan="2" style="width: 20%">Résultats</th>
+      <th scope="col">Vainqueur</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% poule.matches.each do |match| %>
+            <tr>
+              <th><%= match.equipe1.nom_equipe %></th>
+              <th><%= match.equipe2.nom_equipe %></th>
+              <%= form_with(model: match) do |form| %>
+                <th><%= form.number_field :score_equipe1, min:0 %></th>
+                <th><%= form.number_field :score_equipe2, min:0 %></th>
+                  <% end %> 
+              <th>
+                <div class="input-group mb-3">
+                  <select class="form-select" id="inputGroupSelect01">
+                    <option selected>Choisir...</option>
+                    <option value="1"><%= match.equipe1.nom_equipe %></option>
+                    <option value="2"><%= match.equipe2.nom_equipe %></option>
+                  </select>
+                </div>
+              </th> 
+            </tr>
+      <% end %>
+    </tbody>
+<% end %> 
+
+</table>
+       
