@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :equipes
   has_many :poules
+  has_many :matches
 end
