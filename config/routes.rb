@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :matches
+  resources :matches do
+    collection do
+      get 'generate'
+    end
+  end
+
   devise_for :users
 
   resources :poules do

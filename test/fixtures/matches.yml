@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  poule: one
+  equipe: one
+  equipe: one
+  score_equipe1: 1
+  score_equipe2: 1
+  vainqueur: 1
+
+two:
+  poule: two
+  equipe: two
+  equipe: two
+  score_equipe1: 1
+  score_equipe2: 1
+  vainqueur: 1

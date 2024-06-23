@@ -20,6 +20,12 @@
               <%= link_to t('.pools'), poules_path , class:"nav-link nav-link-custom"%>
             </li>            
           <% end %> 
+          <% if (Match.where(user_id: current_user.id).any?)%>
+            <li class="nav-item">
+              <%= link_to t('.matches'), matches_path , class:"nav-link nav-link-custom"%>
+            </li>            
+          <% end %> 
+
           </ul> 
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
